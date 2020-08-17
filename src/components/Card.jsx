@@ -65,32 +65,32 @@ function BaseCard({ ...props }) {
     )
 }
 
-const cardData = [
-    {
-        id: 1,
-        icon: <AddIcon />,
-        title: "Case Confirmed",
-        amount: "139,560",
-        description: "Total of confirmed cases."
-    },
-    {
-        id: 2,
-        icon: <CheckIcon style={{ color: 'green' }} />,
-        title: "Case Recovered",
-        amount: "93,108",
-        description: "Total of recovered cases."
-    },
-    {
-        id: 3,
-        icon: <RemoveIcon style={{ color: 'black' }} />,
-        title: "Case Death",
-        amount: "6,150",
-        description: "Total of death cases."
-    }
-]
-
 export default function FixedCard() {
     const classes = useStyles();
+
+    const cardData = [
+        {
+            id: 1,
+            icon: <AddIcon />,
+            title: "Case Confirmed",
+            amount: "139,560",
+            description: "Total of confirmed cases."
+        },
+        {
+            id: 2,
+            icon: <CheckIcon style={{ color: 'green' }} />,
+            title: "Case Recovered",
+            amount: "93,108",
+            description: "Total of recovered cases."
+        },
+        {
+            id: 3,
+            icon: <RemoveIcon style={{ color: 'black' }} />,
+            title: "Case Death",
+            amount: "6,150",
+            description: "Total of death cases."
+        }
+    ]
 
     return (
         <div>
