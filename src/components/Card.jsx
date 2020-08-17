@@ -29,7 +29,6 @@ const useStyles = makeStyles((theme) => ({
         color: 'red'
     },
     textTitle: {
-        marginTop: 20,
         fontWeight: 'bold'
     },
     textAmount: {

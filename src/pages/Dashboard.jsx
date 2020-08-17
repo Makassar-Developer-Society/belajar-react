@@ -5,6 +5,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import CovidCard from '../components/Card';
+import CovidGraph from '../components/Graph';
 import Footer from '../components/Footer';
 
 const background = require("../assets/img/covid-bg.png");
@@ -40,6 +41,11 @@ const useStyles = makeStyles((theme) => ({
     },
     textWrapper: {
         paddingTop: theme.spacing(5),
+        marginTop: 20,
+        fontWeight: 'bolder'
+    },
+    textWrapper2: {
+        paddingTop: theme.spacing(1),
         marginTop: 20,
         fontWeight: 'bolder'
     },
@@ -92,6 +98,21 @@ export default function Dashboard() {
                         </Grid>
                         <Grid item xs={12} md={8}>
                             <CovidCard />
+                        </Grid>
+                    </Grid>
+                    <Grid container>
+                        <Grid item xs={12} md={4}>
+                            <Typography variant="h3" align="left" className={classes.textWrapper2} gutterBottom>
+                                Graphic Statistic
+                            </Typography>
+                            <Typography variant="subtitle2" align="left" style={{ fontWeight: '100', lineHeight: 2 }}>
+                                Latest update in graphic on confirmed
+                                cases, people recovered & total death in
+                                Indonesia.
+                            </Typography>
+                        </Grid>
+                        <Grid item xs={12} md={8}>
+                            <CovidGraph />
                         </Grid>
                     </Grid>
                 </Container>
