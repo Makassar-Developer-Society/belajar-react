@@ -26,7 +26,8 @@ const useStyles = makeStyles((theme) => ({
     },
     headerDesc: {
         color: '#fff',
-        fontWeight: '100'
+        fontWeight: '100',
+        lineHeight: 2
     },
     headerImgWrapper: {
         marginTop: theme.spacing(4),
@@ -80,10 +81,10 @@ export default function Dashboard() {
                 <Container>
                     <Grid container>
                         <Grid item xs={12} md={4}>
-                            <Typography variant="h3" align="left" className={classes.textWrapper}>
+                            <Typography variant="h3" align="left" className={classes.textWrapper} gutterBottom>
                                 Indonesia
                             </Typography>
-                            <Typography variant="subtitle2" align="left" style={{ fontWeight: '100' }}>
+                            <Typography variant="subtitle2" align="left" style={{ fontWeight: '100', lineHeight: 2 }}>
                                 Latest update on confirmed cases,
                                 people recovered & total death in
                                 Indonesia.

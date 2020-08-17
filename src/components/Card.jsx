@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         maxWidth: '380px',
         flexDirection: 'column',
-        boxShadow: '-12px 13px 10px rgb(51 51 51 / 17%), -17px 7px 40px rgb(232 232 232 / 23%)',
+        boxShadow: '-9px 9px 20px rgb(51 51 51 / 17%), -10px 8px 40px rgb(232 232 232 / 23%)',
         borderRadius: 10
     },
     cardContent: {
