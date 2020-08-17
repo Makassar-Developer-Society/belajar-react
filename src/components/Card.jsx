@@ -17,11 +17,11 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         maxWidth: '380px',
         flexDirection: 'column',
-        boxShadow: '0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2)',
+        boxShadow: '-12px 13px 10px rgb(51 51 51 / 17%), -17px 7px 40px rgb(232 232 232 / 23%)',
         borderRadius: 10
     },
     cardContent: {
-        paddingLeft: theme.spacing(8),
+        paddingLeft: theme.spacing(5),
         flexGrow: 1,
     },
     textTitle: {
