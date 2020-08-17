@@ -5,7 +5,7 @@ import Link from '@material-ui/core/Link';
 
 const useStyles = makeStyles((theme) => ({
     footer: {
-        backgroundColor: theme.palette.background.paper,
+        backgroundColor: '#1C3E93',
         padding: theme.spacing(4),
     },
 }));
@@ -16,9 +16,9 @@ export default function Footer() {
 
     return (
         <div className={classes.footer}>
-            <Typography variant="body2" color="textSecondary" align="center">
+            <Typography variant="body2" align="center" style={{ color: '#fff' }}>
                 {'Copyright © '}
-                <Link color="inherit" href="https://material-ui.com/">
+                <Link color="inherit" style={{ fontWeight: 'bold' }} href="https://material-ui.com/">
                     Belajar React
                 </Link>{' '}
                 {new Date().getFullYear()}

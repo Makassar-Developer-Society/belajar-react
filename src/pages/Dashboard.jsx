@@ -11,13 +11,35 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Footer from '../components/Footer';
 
+const background = require("../assets/img/covid-bg.png");
+
 const useStyles = makeStyles((theme) => ({
     heroContent: {
         backgroundColor: theme.palette.background.paper,
         padding: theme.spacing(8, 0, 6),
+        background: `url(${background})`,
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'auto',
+        height: '490px',
+        position: 'relative',
+        overflow: 'hidden'
     },
-    heroButtons: {
+    headerTitle: {
+        fontWeight: 'bold',
+        color: '#fff'
+    },
+    headerDesc: {
+        color: '#fff',
+        fontWeight: '100'
+    },
+    headerImgWrapper: {
         marginTop: theme.spacing(4),
+    },
+    headerImg: {
+        width: '100%',
+        display: 'block',
+        marginLeft: 'auto',
+        marginRight: 'auto'
     },
     cardGrid: {
         paddingTop: theme.spacing(8),
@@ -42,40 +64,35 @@ const useStyles = makeStyles((theme) => ({
 
 const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-export default function Album() {
+export default function Dashboard() {
     const classes = useStyles();
 
     return (
         <div>
             <CssBaseline />
             <main>
-                {/* Hero unit */}
+                {/* Header */}
                 <div className={classes.heroContent}>
                     <Container maxWidth="sm">
-                        <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
+                        <Typography variant="h2" align="center" className={classes.headerTitle} gutterBottom>
                             CovLytics
-            </Typography>
-                        <Typography variant="h5" align="center" color="textSecondary" paragraph>
-                            Covid-19 Analytics Dashboard
-            </Typography>
-                        <div className={classes.heroButtons}>
+                        </Typography>
+                        <Typography variant="subtitle1" align="center" className={classes.headerDesc}>
+                            The Coronavirus (COVID-19) was first reported in Wuhan, China, in December 2019,
+                            the outbreak was later recognized as a pandemic by the World Health Organization
+                            (WHO) on 11 March 2020.
+                        </Typography>
+                        <div className={classes.headerImgWrapper}>
                             <Grid container spacing={2} justify="center">
-                                <Grid item>
-                                    <Button variant="contained" color="primary">
-                                        Main call to action
-                  </Button>
-                                </Grid>
-                                <Grid item>
-                                    <Button variant="outlined" color="primary">
-                                        Secondary action
-                  </Button>
+                                <Grid item xs={12} md={12}>
+                                    <img src={require("../assets/img/person.png")} alt="Logo" className={classes.headerImg} />
                                 </Grid>
                             </Grid>
                         </div>
                     </Container>
                 </div>
+                {/* End of Header */}
                 <Container className={classes.cardGrid} maxWidth="md">
-                    {/* End hero unit */}
                     <Grid container spacing={4}>
                         {cards.map((card) => (
                             <Grid item key={card} xs={12} sm={6} md={4}>
@@ -88,18 +105,18 @@ export default function Album() {
                                     <CardContent className={classes.cardContent}>
                                         <Typography gutterBottom variant="h5" component="h2">
                                             Heading
-                    </Typography>
+                                        </Typography>
                                         <Typography>
                                             This is a media card. You can use this section to describe the content.
-                    </Typography>
+                                        </Typography>
                                     </CardContent>
                                     <CardActions>
                                         <Button size="small" color="primary">
                                             View
-                    </Button>
+                                        </Button>
                                         <Button size="small" color="primary">
                                             Edit
-                    </Button>
+                                        </Button>
                                     </CardActions>
                                 </Card>
                             </Grid>
