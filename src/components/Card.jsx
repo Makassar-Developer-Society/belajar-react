@@ -6,6 +6,8 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import AddIcon from '@material-ui/icons/Add';
+import CheckIcon from '@material-ui/icons/Check';
+import RemoveIcon from '@material-ui/icons/Remove';
 
 const useStyles = makeStyles((theme) => ({
     cardGrid: {
@@ -65,22 +67,25 @@ function BaseCard({ ...props }) {
 
 const cardData = [
     {
+        id: 1,
         icon: <AddIcon />,
         title: "Case Confirmed",
         amount: "139,560",
         description: "Total of confirmed cases."
     },
     {
-        icon: <AddIcon />,
-        title: "Case Confirmed",
-        amount: "139,560",
-        description: "Total of confirmed cases."
+        id: 2,
+        icon: <CheckIcon style={{ color: 'green' }} />,
+        title: "Case Recovered",
+        amount: "93,108",
+        description: "Total of recovered cases."
     },
     {
-        icon: <AddIcon />,
-        title: "Case Confirmed",
-        amount: "139,560",
-        description: "Total of confirmed cases."
+        id: 3,
+        icon: <RemoveIcon style={{ color: 'black' }} />,
+        title: "Case Death",
+        amount: "6,150",
+        description: "Total of death cases."
     }
 ]
 
@@ -92,7 +97,7 @@ export default function FixedCard() {
             <Container className={classes.cardGrid}>
                 <Grid container spacing={4}>
                     {cardData.map((data) => (
-                        <Grid item key={data} xs={12} md={6}>
+                        <Grid item key={data.id} xs={12} md={6}>
                             <BaseCard icon={data.icon} title={data.title} amount={data.amount} description={data.description} />
                         </Grid>
                     ))}
