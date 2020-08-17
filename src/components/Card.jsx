@@ -24,6 +24,10 @@ const useStyles = makeStyles((theme) => ({
         paddingLeft: theme.spacing(5),
         flexGrow: 1,
     },
+    icon: {
+        fontSize: 30,
+        color: 'red'
+    },
     textTitle: {
         marginTop: 20,
         fontWeight: 'bold'
@@ -37,33 +41,60 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-const cards = [1, 2, 3];
+function BaseCard({ ...props }) {
+    const classes = useStyles();
 
-export default function Dashboard() {
+    return (
+        <Card className={classes.card}>
+            <CardContent className={classes.cardContent}>
+                <Typography variant="h6" align="left" className={classes.textTitle} gutterBottom>
+                    <div className={classes.icon}>
+                        {props.icon}
+                    </div>
+                    {props.title}
+                </Typography>
+                <Typography variant="h3" align="left" className={classes.textAmount}>
+                    {props.amount}
+                </Typography>
+                <Typography variant="subtitle2" align="left" className={classes.textDescription}>
+                    {props.description}
+                </Typography>
+            </CardContent>
+        </Card>
+    )
+}
+
+const cardData = [
+    {
+        icon: <AddIcon />,
+        title: "Case Confirmed",
+        amount: "139,560",
+        description: "Total of confirmed cases."
+    },
+    {
+        icon: <AddIcon />,
+        title: "Case Confirmed",
+        amount: "139,560",
+        description: "Total of confirmed cases."
+    },
+    {
+        icon: <AddIcon />,
+        title: "Case Confirmed",
+        amount: "139,560",
+        description: "Total of confirmed cases."
+    }
+]
+
+export default function FixedCard() {
     const classes = useStyles();
 
     return (
         <div>
             <Container className={classes.cardGrid}>
                 <Grid container spacing={4}>
-                    {cards.map((card) => (
-                        <Grid item key={card} xs={12} md={6}>
-                            <Card className={classes.card}>
-                                <CardContent className={classes.cardContent}>
-                                    <Typography variant="h6" align="left" className={classes.textTitle} gutterBottom>
-                                        <div>
-                                            <AddIcon style={{ fontSize: 30 }} />
-                                        </div>
-                                        Case Confirmed
-                                    </Typography>
-                                    <Typography variant="h3" align="left" className={classes.textAmount}>
-                                        139,560
-                                    </Typography>
-                                    <Typography variant="subtitle2" align="left" className={classes.textDescription}>
-                                        Total of confirmed cases.
-                                    </Typography>
-                                </CardContent>
-                            </Card>
+                    {cardData.map((data) => (
+                        <Grid item key={data} xs={12} md={6}>
+                            <BaseCard icon={data.icon} title={data.title} amount={data.amount} description={data.description} />
                         </Grid>
                     ))}
                 </Grid>
