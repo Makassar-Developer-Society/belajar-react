@@ -18,20 +18,20 @@ Berikut merupakan list dependencies dari web belajar-react
 
 ### Material-UI
 
-ReactJs UI
+ReactJs UI<br />
 Dokumentasi: https://material-ui.com/
 
 ### Material-Icons
 
-ReactJs UI Icons
+ReactJs UI Icons<br />
 Dokumentasi: https://material-ui.com/components/material-icons/
 
 ### Axios
 
-Http Client
+Http Client<br />
 Dokumentasi: https://www.npmjs.com/package/axios
 
 ### Recharts
 
-React Chart
+React Chart<br />
 Dokumentasi: http://recharts.org/
