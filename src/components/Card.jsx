@@ -75,7 +75,7 @@ export default function FixedCard() {
     useEffect(() => {
         // Variable baru
         let fetchData;
-        axios.get('http://api.coronatracker.com/v3/stats/worldometer/country?countryCode=ID')
+        axios.get('https://api.coronatracker.com/v3/stats/worldometer/country?countryCode=ID')
             .then(res => {
                 // ternary (if else) - Jika berhasil mendapatkan data dari api maka data diset dengan fetchData yang merupakan data dari api(res.data[0]).
                 fetchData = res ? res.data[0] : []

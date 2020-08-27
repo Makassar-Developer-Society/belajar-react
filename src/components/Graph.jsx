@@ -42,7 +42,7 @@ function BaseChart() {
     useEffect(() => {
         // Variable baru
         let fetchData, formatData;
-        axios.get('http://api.coronatracker.com/v3/analytics/trend/country?startDate=2020-03-01&endDate=2020-03-31&countryCode=ID')
+        axios.get('https://api.coronatracker.com/v3/analytics/trend/country?startDate=2020-03-01&endDate=2020-03-31&countryCode=ID')
             .then(res => {
                 // ternary (if else) - Jika berhasil mendapatkan data dari api maka data diset dengan fetchData yang merupakan data dari api(res.data).
                 fetchData = res ? res.data : []
