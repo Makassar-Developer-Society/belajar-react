@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import { makeStyles } from '@material-ui/core/styles';
@@ -7,30 +7,8 @@ import Container from '@material-ui/core/Container';
 import {
     LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer
 } from 'recharts';
-
-const data = [
-    {
-        name: 'Page A', uv: 4000, pv: 2400, amt: 2400,
-    },
-    {
-        name: 'Page B', uv: 3000, pv: 1398, amt: 2210,
-    },
-    {
-        name: 'Page C', uv: 2000, pv: 9800, amt: 2290,
-    },
-    {
-        name: 'Page D', uv: 2780, pv: 3908, amt: 2000,
-    },
-    {
-        name: 'Page E', uv: 1890, pv: 4800, amt: 2181,
-    },
-    {
-        name: 'Page F', uv: 2390, pv: 3800, amt: 2500,
-    },
-    {
-        name: 'Page G', uv: 3490, pv: 4300, amt: 2100,
-    },
-];
+import axios from 'axios';
+import Format from '../helpers/DateFormat';
 
 const useStyles = makeStyles((theme) => ({
     cardGrid: {
@@ -57,6 +35,26 @@ const useStyles = makeStyles((theme) => ({
 
 function BaseChart() {
     const classes = useStyles();
+    // Data yang akan digunakan - Set awal dengan array kosong
+    const [data, setData] = useState([])
+
+    // useEffect - merupakan lifecyle react hook yang jalan pertama kali disaat page dikunjungi / direfresh
+    useEffect(() => {
+        // Variable baru
+        let fetchData, formatData;
+        axios.get('http://api.coronatracker.com/v3/analytics/trend/country?startDate=2020-03-01&endDate=2020-03-31&countryCode=ID')
+            .then(res => {
+                // ternary (if else) - Jika berhasil mendapatkan data dari api maka data diset dengan fetchData yang merupakan data dari api(res.data).
+                fetchData = res ? res.data : []
+                // ternary (if else) - Jika berhasil mendapatkan data dari fetchData maka data tersebut akan dimapping dan diubah isian dalam objectnya dan data last_updated diformat menjadi tanggal yang mudah dipahami.
+                formatData = fetchData ? fetchData.map((x, i) => ({ date: Format.DateOnly(x.last_updated), total_confirmed: x.total_confirmed, total_deaths: x.total_deaths })) : []
+                setData(formatData)
+            })
+            .catch(err => {
+                // Jika gagal mendapatkan data dari api maka data akan diset menjadi array kosong
+                setData([])
+            })
+    }, [])
 
     return (
         <div className={classes.graph}>
@@ -70,11 +68,14 @@ function BaseChart() {
                     }}
                 >
                     <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="name" />
+                    <XAxis dataKey="date" />
                     <YAxis />
                     <Tooltip />
                     <Legend />
-                    <Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{ r: 8 }} />
+                    {/* Line chart untuk total kasus terkonfirmasi */}
+                    <Line type="monotone" dataKey="total_confirmed" stroke="#8884d8" activeDot={{ r: 8 }} />
+                    {/* Line chart untuk total kasus kematian */}
+                    <Line type="monotone" dataKey="total_deaths" stroke="#FF0000" activeDot={{ r: 8 }} />
                 </LineChart>
             </ResponsiveContainer>
         </div>
