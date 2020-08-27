@@ -68,6 +68,7 @@ function BaseChart() {
                     }}
                 >
                     <CartesianGrid strokeDasharray="3 3" />
+                    {/* Data tanggal */}
                     <XAxis dataKey="date" />
                     <YAxis />
                     <Tooltip />
