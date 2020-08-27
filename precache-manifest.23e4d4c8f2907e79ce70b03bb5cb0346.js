@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "a0910dc11a215a388d63051fe9d14c5a",
+    "revision": "daf35d0ab0f1c2cbe77067f75330d82f",
     "url": "/belajar-react/index.html"
   },
   {
-    "revision": "5a22e08c23a157111eeb",
+    "revision": "19c8e66161a8415d2239",
     "url": "/belajar-react/static/css/main.523f09c5.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/belajar-react/static/js/2.e3876ecf.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "5a22e08c23a157111eeb",
-    "url": "/belajar-react/static/js/main.048122cd.chunk.js"
+    "revision": "19c8e66161a8415d2239",
+    "url": "/belajar-react/static/js/main.c4aadb4e.chunk.js"
   },
   {
     "revision": "31872f60cbf780c213ad",

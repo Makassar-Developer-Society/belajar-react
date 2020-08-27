@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/belajar-react/static/css/main.523f09c5.chunk.css",
-    "main.js": "/belajar-react/static/js/main.048122cd.chunk.js",
-    "main.js.map": "/belajar-react/static/js/main.048122cd.chunk.js.map",
+    "main.js": "/belajar-react/static/js/main.c4aadb4e.chunk.js",
+    "main.js.map": "/belajar-react/static/js/main.c4aadb4e.chunk.js.map",
     "runtime-main.js": "/belajar-react/static/js/runtime-main.29b97b77.js",
     "runtime-main.js.map": "/belajar-react/static/js/runtime-main.29b97b77.js.map",
     "static/js/2.e3876ecf.chunk.js": "/belajar-react/static/js/2.e3876ecf.chunk.js",
     "static/js/2.e3876ecf.chunk.js.map": "/belajar-react/static/js/2.e3876ecf.chunk.js.map",
     "index.html": "/belajar-react/index.html",
-    "precache-manifest.813c99c377832ad9e54684f19a5fa707.js": "/belajar-react/precache-manifest.813c99c377832ad9e54684f19a5fa707.js",
+    "precache-manifest.23e4d4c8f2907e79ce70b03bb5cb0346.js": "/belajar-react/precache-manifest.23e4d4c8f2907e79ce70b03bb5cb0346.js",
     "service-worker.js": "/belajar-react/service-worker.js",
     "static/css/main.523f09c5.chunk.css.map": "/belajar-react/static/css/main.523f09c5.chunk.css.map",
     "static/js/2.e3876ecf.chunk.js.LICENSE.txt": "/belajar-react/static/js/2.e3876ecf.chunk.js.LICENSE.txt",
@@ -19,6 +19,6 @@
     "static/js/runtime-main.29b97b77.js",
     "static/js/2.e3876ecf.chunk.js",
     "static/css/main.523f09c5.chunk.css",
-    "static/js/main.048122cd.chunk.js"
+    "static/js/main.c4aadb4e.chunk.js"
   ]
 }
